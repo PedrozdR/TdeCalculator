@@ -1,0 +1,51 @@
+<ion-header>
+	<h3 class="calculator"><img src="../../assets/imgs/tdecalculator.jpg"></h3>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>Sexo:</ion-label>
+			<ion-select [(ngModel)]="sexo">
+				<ion-option value="fem">Feminino</ion-option>
+				<ion-option value="masc">Masculino</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Idade:</ion-label>
+			<ion-input type="number" value="idade" placeholder="Insira sua idade atual"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Peso:</ion-label>
+			<ion-input type="number" value="peso" style="widows: 60px;" placeholder="Insira seu peso atual"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Atividade:</ion-label>
+			<ion-select [(ngModel)]="atividade">
+				<ion-option value="sed">Sedentário(Não faço exercicios)</ion-option>
+				<ion-option value="pouco">Pouco (1-2 dias por semana)</ion-option>
+				<ion-option value="moderado">Moderado (3-5 dias por semana)</ion-option>
+				<ion-option value="alto">Frequente (6-7 dias por semana)</ion-option>
+				<ion-option value="atleta">Atleta (2x por dia)</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Percentual de Gordura:</ion-label>
+			<ion-input placeholder="Opicional"></ion-input>
+		</ion-item>
+
+		
+		<h5 class="percGordura">se não sabe qual é o seu percentual de gordura <a (click)="percGodura()">Clique aqui</a></h5>
+
+	</ion-list>
+
+
+
+
+
+</ion-content>
