@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { PercgoduraPage } from '../pages/percgodura/percgodura';
 import { PercgordurafemPage } from '../pages/percgordurafem/percgordurafem';
+import { ResultadoPage } from '../pages/resultado/resultado';
 @Component({
   templateUrl: 'app.html'
 })
