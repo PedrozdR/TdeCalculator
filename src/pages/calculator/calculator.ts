@@ -21,6 +21,7 @@ export class CalculatorPage {
   sexo = this.sexo;
   idade = this.idade;
   peso = this.peso;
+  altura = this.altura;
   atividade = this.atividade;
 
 
@@ -58,7 +59,9 @@ export class CalculatorPage {
     }
   }
 
-  calcular() {
+  verificaValores() {
+    var resultado;
+
 
     if (this.sexo == null) {
       const alert = this.alertCtrl.create({
@@ -69,7 +72,7 @@ export class CalculatorPage {
       alert.present();
 
     } if (this.idade == null) {
-       const alert = this.alertCtrl.create({
+      const alert = this.alertCtrl.create({
         title: 'Informe sua Idade!',
         subTitle: 'Preencha o campo de idade e tente novamente!',
         buttons: ['OK']
@@ -83,7 +86,15 @@ export class CalculatorPage {
         buttons: ['OK']
       });
       alert.present();
-      
+
+    } if (this.altura == null) {
+      const alert = this.alertCtrl.create({
+        title: 'Informe sua altura!',
+        subTitle: 'Preencha o campo de altura e tente novamente!',
+        buttons: ['OK']
+      });
+      alert.present();
+
     } if (this.atividade == null) {
       const alert = this.alertCtrl.create({
         title: 'Informe sua frequencia!',
@@ -91,13 +102,17 @@ export class CalculatorPage {
         buttons: ['OK']
       });
       alert.present();
-    }
-
-    if(this.sexo && this.idade && this.peso && this.atividade != null){
-      this.navCtrl.push(ResultadoPage);
-    }
- 
+    }    
   }
+
+  resultado(){
+    if(this.sexo && this.idade && this.peso && this.altura && this.atividade !=null)
+    this.navCtrl.push(ResultadoPage);
+  }
+
+
+
+
 }
 
 
