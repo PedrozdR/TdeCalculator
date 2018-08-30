@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { PercgoduraPage } from '../pages/percgodura/percgodura';
 import { PercgordurafemPage } from '../pages/percgordurafem/percgordurafem';
+import { ResultadoPage } from '../pages/resultado/resultado';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PercgordurafemPage } from '../pages/percgordurafem/percgordurafem';
     HomePage,
     CalculatorPage,
     PercgoduraPage,
-    PercgordurafemPage
+    PercgordurafemPage,
+    ResultadoPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { PercgordurafemPage } from '../pages/percgordurafem/percgordurafem';
     HomePage,
     CalculatorPage,
     PercgoduraPage,
-    PercgordurafemPage
+    PercgordurafemPage,
+    ResultadoPage
   ],
   providers: [
     StatusBar,

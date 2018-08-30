@@ -11,7 +11,7 @@ import { PercgordurafemPage } from '../pages/percgordurafem/percgordurafem';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = PercgordurafemPage ;
+  rootPage:any = CalculatorPage ;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
