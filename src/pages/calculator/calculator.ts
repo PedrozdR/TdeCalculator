@@ -110,9 +110,8 @@ export class CalculatorPage {
       var imc = parseFloat(calculo.toFixed(2));
       var faixa: any;
 
-      if (imc < 15) {
+      if (imc<=15) {
         faixa = String("ESTRENANEBTE ABAIXO DO PESO");
-        return faixa
       } else {
         if (imc >= 15 && imc <= 16) {
           faixa = String("GRAVEMENTE ABAIXO DO PESO");
@@ -142,7 +141,7 @@ export class CalculatorPage {
           }
         }
       }
-      this.navCtrl.push(ResultadoPage, {imc,faixa});
+      this.navCtrl.push(ResultadoPage, { imc, faixa });
     }
 
   }
