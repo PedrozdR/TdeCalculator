@@ -60,7 +60,6 @@ export class CalculatorPage {
   }
 
   verificaValores() {
-    var resultado;
 
 
     if (this.sexo == null) {
@@ -102,12 +101,50 @@ export class CalculatorPage {
         buttons: ['OK']
       });
       alert.present();
-    }    
+    }
   }
 
-  resultado(){
-    if(this.sexo && this.idade && this.peso && this.altura && this.atividade !=null)
-    this.navCtrl.push(ResultadoPage);
+  resultado() {
+    if (this.sexo && this.idade && this.peso && this.altura && this.atividade != null) {
+      var calculo = parseInt(this.peso) / (parseFloat(this.altura) * parseFloat(this.altura));
+      var imc = parseFloat(calculo.toFixed(2));
+      var faixa: any;
+
+      if (imc < 15) {
+        faixa = String("ESTRENANEBTE ABAIXO DO PESO");
+        return faixa
+      } else {
+        if (imc >= 15 && imc <= 16) {
+          faixa = String("GRAVEMENTE ABAIXO DO PESO");
+        } else {
+          if (imc >= 16 && imc <= 18.5) {
+            faixa = String("ABAIXO DO PESO IDEAL");
+          } else {
+            if (imc >= 18.5 && imc <= 25) {
+              faixa = String("NA FAIXA DO PESO IDEAL");
+            } else {
+              if (imc >= 25 && imc <= 30) {
+                faixa = String("SOBREPESO");
+              } else {
+                if (imc >= 30 && imc <= 35) {
+                  faixa = String("COM OBESIDADE GRAU I");
+                } else {
+                  if (imc >= 35 && imc <= 40) {
+                    faixa = String("COM OBESIDADE GRAU II(GRAVE)");
+                  } else {
+                    if (imc > 40) {
+                      faixa = String("OBESIDADE GRAU III(MÓRBIDA");
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      this.navCtrl.push(ResultadoPage, {imc,faixa});
+    }
+
   }
 
 

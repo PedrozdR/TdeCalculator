@@ -15,20 +15,23 @@ import { CalculatorPage } from '../calculator/calculator';
   templateUrl: 'resultado.html',
 })
 export class ResultadoPage {
-  resultado = this.resultado
+  imc: any;
+  faixa:any;
 
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public alertCtrl: AlertController
-    ) {
+    ){
+      this.imc = navParams.get('imc')
+      this.faixa = navParams.get('faixa');
   }
 
   
 
   ionViewDidLoad() {
-    
-    console.log(this.resultado)
+    console.log(this.imc)
+    console.log(this.faixa)
   }
 
   voltaCalculator(){
