@@ -1,15 +1,10 @@
-
 <ion-header>
-
- <h1 class="title">Resultado</h1>
-  
-
+    <h1 class="title">Resultado</h1>
 </ion-header>
-
-
 <ion-content padding>
-    
-        <p>O seu IMC é de {{imc}} ! Você está {{faixa}}</p>
+    <h4 class="imc">O seu IMC é de : {{imc}} </h4>
+    <br>
+    <h4 class="faixa">Você está:</h4>
+    <h3 class="faixa">{{faixa}}!</h3>
     <button ion-button full (click)="voltaCalculator()">Click</button>
-    
 </ion-content>

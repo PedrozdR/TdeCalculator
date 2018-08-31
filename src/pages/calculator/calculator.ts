@@ -25,8 +25,6 @@ export class CalculatorPage {
   atividade = this.atividade;
 
 
-
-
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
@@ -110,8 +108,8 @@ export class CalculatorPage {
       var imc = parseFloat(calculo.toFixed(2));
       var faixa: any;
 
-      if (imc<=15) {
-        faixa = String("ESTRENANEBTE ABAIXO DO PESO");
+      if (imc <= 15) {
+        faixa = String("EXTREMAMENTE ABAIXO DO PESO");
       } else {
         if (imc >= 15 && imc <= 16) {
           faixa = String("GRAVEMENTE ABAIXO DO PESO");

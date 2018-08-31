@@ -1,14 +1,8 @@
 <ion-header>
 	<h3 class="calculator"><img src="../../assets/imgs/tdecalculator.jpg"></h3>
 </ion-header>
-
-
-
 <ion-content padding>
-
-
 	<ion-list>
-
 		<ion-item>
 			<ion-label>Sexo:</ion-label>
 			<ion-select [(ngModel)]="sexo">
@@ -16,24 +10,18 @@
 				<ion-option value="masc">Masculino</ion-option>
 			</ion-select>
 		</ion-item>
-
 		<ion-item>
 			<ion-label>Idade:</ion-label>
 			<ion-input type="number" [(ngModel)]="idade" placeholder="Insira sua idade atual" id="idIdade"></ion-input>
 		</ion-item>
-
 		<ion-item>
 			<ion-label>Peso:</ion-label>
 			<ion-input type="number" [(ngModel)]="peso" style="widows: 60px;" placeholder="Insira seu peso atual" id="idPeso"></ion-input>
 		</ion-item>
-
 		<ion-item>
 			<ion-label>Altura:</ion-label>
 			<ion-input type="number" [(ngModel)]="altura" style="widows: 60px;" placeholder="Insira sua altura atual" id="idAltura"></ion-input>
 		</ion-item>
-
-
-
 		<ion-item>
 			<ion-label>Frequencia de atividade:</ion-label>
 			<ion-select [(ngModel)]="atividade">
@@ -44,17 +32,11 @@
 				<ion-option value="atleta">Atleta (2x por dia)</ion-option>
 			</ion-select>
 		</ion-item>
-
 		<ion-item>
 			<ion-label>Percentual de Gordura:</ion-label>
 			<ion-input placeholder="Opicional"></ion-input>
 		</ion-item>
-
 		<button class="button" ion-button full (click)="verificaValores();resultado()">Calcular</button>
-
-
 		<h5 class="percGordura">Não sabe seu percentual de gordura? <a (click)="percGodura()">Clique aqui</a> !!!</h5>
-
 	</ion-list>
-
 </ion-content>
