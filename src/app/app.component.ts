@@ -12,7 +12,7 @@ import { ResultadoPage } from '../pages/resultado/resultado';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ResultadoPage ;
+  rootPage:any = ResultadoPage  ;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

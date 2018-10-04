@@ -17,6 +17,7 @@ import { CalculatorPage } from '../calculator/calculator';
 export class ResultadoPage {
   imc: any;
   faixa: any;
+  tbm: any;
 
 
   constructor(public navCtrl: NavController,
@@ -25,6 +26,7 @@ export class ResultadoPage {
   ) {
     this.imc = navParams.get('imc')
     this.faixa = navParams.get('faixa');
+    this.tbm = navParams.get('tbm');
   }
 
 
@@ -32,6 +34,7 @@ export class ResultadoPage {
   ionViewDidLoad() {
     console.log(this.imc)
     console.log(this.faixa)
+    console.log(this.tbm)
   }
 
   voltaCalculator() {

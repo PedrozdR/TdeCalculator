@@ -23,6 +23,8 @@ export class CalculatorPage {
   peso = this.peso;
   altura = this.altura;
   atividade = this.atividade;
+  objetivo = this.objetivo;
+
 
 
   constructor(public navCtrl: NavController,
@@ -99,14 +101,47 @@ export class CalculatorPage {
         buttons: ['OK']
       });
       alert.present();
+    } if (this.objetivo == null) {
+      const alert = this.alertCtrl.create({
+        title: 'Informe seu objetivo',
+        subTitle: 'Preencha o campo de objetivo e tente novamente!',
+        buttons: ['OK']
+      });
+      alert.present();
     }
   }
 
   resultado() {
-    if (this.sexo && this.idade && this.peso && this.altura && this.atividade != null) {
-      var calculo = parseInt(this.peso) / (parseFloat(this.altura) * parseFloat(this.altura));
+    if (this.sexo && this.idade && this.peso && this.altura && this.atividade && this.objetivo != null) {
+      
+      var calculo = parseInt(this.peso) / ((parseFloat(this.altura)/100) * ((parseFloat(this.altura)/100)));
       var imc = parseFloat(calculo.toFixed(2));
       var faixa: any;
+      var tbm: any;
+
+      if (this.sexo == "masc") {
+        tbm = 66 + (13.7 * this.peso) + (5 * this.altura) - (6.8 * this.idade);
+      } else {
+        tbm = 66 + (9.6 * this.peso) + (1.8 * this.altura) - (4.7 * this.idade);
+      }
+
+
+      if (this.atividade == "sed") {
+        tbm = tbm * 1.2;
+      } else {
+        if (this.atividade == "pouco") {
+          tbm = tbm * 1.375;
+        } else if (this.atividade == "moderado") {
+          tbm = tbm * 1.55;
+        } else if (this.atividade == "alto") {
+          tbm = tbm * 1.725;
+        } else if (this.atividade == "atleta") {
+          tbm = tbm * 1.9;
+        }
+      }
+
+
+
 
       if (imc <= 15) {
         faixa = String("EXTREMAMENTE ABAIXO DO PESO");
@@ -139,7 +174,7 @@ export class CalculatorPage {
           }
         }
       }
-      this.navCtrl.push(ResultadoPage, { imc, faixa });
+      this.navCtrl.push(ResultadoPage, { imc, faixa, tbm });
     }
 
   }

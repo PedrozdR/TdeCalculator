@@ -32,6 +32,17 @@
 				<ion-option value="atleta">Atleta (2x por dia)</ion-option>
 			</ion-select>
 		</ion-item>
+
+		<ion-item>
+				<ion-label>Qual seu objetivo:</ion-label>
+				<ion-select [(ngModel)]="objetivo">
+					<ion-option value="ganhar">Ganhar peso</ion-option>
+					<ion-option value="perder">Perder peso</ion-option>
+				</ion-select>
+		</ion-item>
+
+
+
 		<ion-item>
 			<ion-label>Percentual de Gordura:</ion-label>
 			<ion-input placeholder="Opicional"></ion-input>
