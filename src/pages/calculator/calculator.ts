@@ -113,16 +113,22 @@ export class CalculatorPage {
 
   resultado() {
     if (this.sexo && this.idade && this.peso && this.altura && this.atividade && this.objetivo != null) {
-      
-      var calculo = parseInt(this.peso) / ((parseFloat(this.altura)/100) * ((parseFloat(this.altura)/100)));
+
+      var calculo = parseInt(this.peso) / ((parseFloat(this.altura) / 100) * ((parseFloat(this.altura) / 100)));
       var imc = parseFloat(calculo.toFixed(2));
       var faixa: any;
       var tbm: any;
+      var objetivo: any;
 
       if (this.sexo == "masc") {
         tbm = 66 + (13.7 * this.peso) + (5 * this.altura) - (6.8 * this.idade);
+
       } else {
-        tbm = 66 + (9.6 * this.peso) + (1.8 * this.altura) - (4.7 * this.idade);
+        if (this.sexo == "fem") {
+          tbm = 66 + (9.6 * this.peso) + (1.8 * this.altura) - (4.7 * this.idade);
+          tbm = parseFloat(tbm.toFixed(3));
+        }
+
       }
 
 
@@ -138,6 +144,14 @@ export class CalculatorPage {
         } else if (this.atividade == "atleta") {
           tbm = tbm * 1.9;
         }
+      }
+
+      if (this.objetivo == "ganhar") {
+        tbm = tbm + 500;
+        objetivo = String("GANHAR PESO");
+      } else {
+        tbm = tbm - 500;
+        objetivo = String("PERDER PESO");
       }
 
 
@@ -174,7 +188,7 @@ export class CalculatorPage {
           }
         }
       }
-      this.navCtrl.push(ResultadoPage, { imc, faixa, tbm });
+      this.navCtrl.push(ResultadoPage, { imc, faixa, tbm, objetivo });
     }
 
   }

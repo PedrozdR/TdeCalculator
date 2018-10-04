@@ -18,6 +18,7 @@ export class ResultadoPage {
   imc: any;
   faixa: any;
   tbm: any;
+  objetivo: any;
 
 
   constructor(public navCtrl: NavController,
@@ -27,6 +28,7 @@ export class ResultadoPage {
     this.imc = navParams.get('imc')
     this.faixa = navParams.get('faixa');
     this.tbm = navParams.get('tbm');
+    this.objetivo =navParams.get('objetivo');
   }
 
 
